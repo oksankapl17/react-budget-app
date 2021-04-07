@@ -12,14 +12,14 @@ const Dashboard = ({
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
-
-  return loading && profile === null ? (
+  console.log(profile)
+  return loading || profile === null ? (
     <Spinner />
   ) : (
     <Fragment>
       <h1 className='large text-primary'>Welcome to the Budget Tracker!</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Welcome {user?.firstName} {user?.lastName}
+        <i className='fas fa-user' /> Welcome {profile?.firstName} {profile?.lastName}
       </p>
     </Fragment>
   );

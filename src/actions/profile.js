@@ -18,7 +18,7 @@ export const getCurrentProfile = () => async dispatch => {
 
     dispatch({
       type: GET_PROFILE,
-      payload: res.data
+      payload: res.data.user
     });
   } catch (err) {
     dispatch({
